@@ -1,0 +1,66 @@
+{
+  "name": "ng-formio-builder",
+  "version": "2.31.1",
+  "description": "The Angular.js form builder component.",
+  "main": "dist/ngFormBuilder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:formioapp/ngFormBuilder.git"
+  },
+  "author": "Travis Tidwell <travis@form.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/formioapp/ngFormBuilder/issues"
+  },
+  "homepage": "https://github.com/formioapp/ngFormBuilder",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "brfs": "^1.5.0",
+    "browserify": "^16.1.1",
+    "del": "^3.0.0",
+    "eslint-config-formio": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-derequire": "^2.1.0",
+    "gulp-eslint": "^4.0.2",
+    "gulp-filter": "^5.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^3.0.0",
+    "main-bower-files": "^2.11.1",
+    "run-sequence": "^2.2.0",
+    "shallow-copy": "0.0.1",
+    "strictify": "^0.2.0",
+    "uglifyify": "^4.0.4",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.11.0",
+	"Bootstrap":"^3.3.7",
+	
+  },
+  "browserify": {
+    "transform": [
+      "strictify",
+      "brfs"
+    ]
+  },
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-ckeditor": "github:lemonde/angular-ckeditor#v1.0.3",
+    "angular-drag-and-drop-lists": "^2.1.0",
+    "angular-ui-bootstrap": "^2.5.6",
+    "formiojs": "^2.30.1",
+    "lodash": "^4.17.4",
+    "ng-dialog": "^1.4.0",
+    "ng-formio": "^2.31.1",
+    "ng-tags-input": "^3.2.0"
+  }
+}
