@@ -16,10 +16,31 @@ export class CustomControlComponent {
     this.customCompForm = {
       components: [
         {
-          type: "yaqeenControl",
+          //type: "yaqeenControl",
           isNew: true,
-          key: "yaqeenControlComp",
-          spellcheck:true
+          key: "yaqeenControlCongmp",
+          type: 'yaqeenControl',
+          autofocus:true,
+          label: 'Yaqeen Validation ',
+          tableView: true,
+          input: true,
+          clearOnHide: true,
+          persistent: true,
+          protected: false,
+          fields:{
+            idType:{
+              label:"ID type",
+              required: true,
+              placeholder:'-- select id type --',
+              type:'select'
+            },
+            idNumber:{
+              label:"ID Number",
+              required: true,
+              placeholder:'ID Number',
+              type:'text'
+            }
+          }
         },
         {
           autofocus: false,
