@@ -9,9 +9,35 @@ import { FormioComponent, ComponentOptions, ValidateOptions, FormioForm } from '
 })
 export class CustomControlComponent {
 
-  myForm : FormioForm
+  myForm : any
   
   constructor() {
+    this.myForm = {
+      title: "Yaqeen control component",
+      group: "layout",
+      template:"tfsdemplate.html",
+      viewTemplate:"tempdsfdslate.html",
+      components: [
+          {
+            type: "yaqeenControl",
+            isNew: true,
+            key: "custom",
+            protected: false,
+            persistent: true,
+            placeholder: "Enter your email address",
+            spellcheck:false
+          },
+          {
+            type: 'textarea',
+            label: 'Content',
+            placeholder: 'Enter content here',
+            wysiwyg: true,
+            key: 'content',
+            input: true,
+            inputType: 'text'
+          }
+      ]
+    };
     // this.myForm = {};
     // let validateOptions : ValidateOptions = { };
     // this.myForm.title= "form title";

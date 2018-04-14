@@ -10,11 +10,13 @@ import { TestFormComponent } from './allControlSamples/test-form.component';
 import { Formio } from 'formiojs/full';
 import { YaqeenControlComponent } from './custom-control/yaqeenControl';
 import FormioUtils from 'formiojs/utils';
+import { LearningResourcesComponent } from './learning-resources/learning-resources.component';
 
 
 const appRoutes: Routes = [
   { path: 'form', component: TestFormComponent },
   { path: 'custom', component: CustomControlComponent },
+  { path: 'learn', component: LearningResourcesComponent },
   { path: '**', component: CustomControlComponent }
 ];
 
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     TestFormComponent,
-    CustomControlComponent
+    CustomControlComponent,
+    LearningResourcesComponent
   ],
   imports: [
     BrowserModule,
