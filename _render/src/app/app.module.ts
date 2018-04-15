@@ -41,7 +41,5 @@ const appRoutes: Routes = [
 export class AppModule {
   constructor() {
     Formio.registerComponent('yaqeenControl', YaqeenControlComponent);
-
-    
-  } 
+  }
 }
