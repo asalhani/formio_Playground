@@ -89,7 +89,7 @@ export class YaqeenControlComponent extends BaseComponent {
         const monthInputWrapper = this.ce('div');
         this.monthInput = this.ce('select', {
             class: 'form-control',
-            id
+            id  
         });
         this.hook('input', this.monthInput, monthInputWrapper);
         this.selectOptions(this.monthInput, 'monthOption', this.idTypes);
