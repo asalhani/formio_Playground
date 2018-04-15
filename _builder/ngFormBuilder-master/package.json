@@ -43,7 +43,7 @@
     "uglifyify": "^4.0.4",
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.11.0",
-	"Bootstrap":"^3.3.7",
+	"Bootstrap":"^3.3.7"
 	
   },
   "browserify": {
