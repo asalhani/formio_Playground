@@ -16,204 +16,54 @@ export class CustomControlComponent {
     this.customCompForm = {
       components: [
         {
-          //type: "yaqeenControl",
           isNew: true,
-          key: "yaqeenControlCongmp",
+          key: 'yaqeenControlComp',
           type: 'yaqeenControl',
-          autofocus:true,
+          autofocus: true,
           label: 'Yaqeen Validation ',
           tableView: true,
           input: true,
           clearOnHide: true,
           persistent: true,
           protected: false,
-          fields:{
-            idType:{
-              label:"ID type",
+          fields: {
+            idType: {
+              label: 'ID type',
               required: true,
-              placeholder:'-- select id type --',
-              type:'select'
+              placeholder: '-- select id type --',
+              type: 'select'
             },
-            idNumber:{
-              label:"ID Number",
+            idNumber: {
+              label: 'ID Number',
               required: true,
-              placeholder:'ID Number',
-              type:'text'
+              placeholder: 'ID Number',
+              type: 'text'
             }
           }
         },
         {
           autofocus: false,
           input: true,
-          label: "Submit",
+          label: 'Submit',
           tableView: false,
-          ke: "submit",
-          size: "md",
-          leftIcon: "",
-          rightIcon: "",
+          ke: 'submit',
+          size: 'md',
+          leftIcon: '',
+          rightIcon: '',
           block: false,
-          action: "submit",
+          action: 'submit',
           disableOnInvalid: false,
-          theme: "primary",
-          type: "button"
+          theme: 'primary',
+          type: 'button'
         }
       ],
-      revisions: "",
-      _vid: 0,
-      access: [
-        {
-          roles: [
-            "5acbd1b53c2be2a2ded30239",
-            "5acbd1b53c2be2606cd3023a",
-            "5acbd1b53c2be23d22d3023b"
-          ],
-          type: "read_all"
-        }
-      ],
-      submissionAccess: [],
-      created: "2018-04-13T19:31:53.228Z",
-      _id: "5ad105a939a94bb009f3c045",
-      title: "New form",
-      display: "form",
-      settings: {},
-      name: "newForm",
-      path: "newform",
-      project: "5acbd1b53c2be283ced30238",
-      modified: "2018-04-13T19:31:53.419Z",
-      machineName: "kpeemdlniebvueo:newForm"
+      title: 'New form',
+      display: 'form',
+      name: 'newForm',
+      path: 'newform'
     };
 
-    this.myForm = {
-      "type": "form",
-      "tags": [],
-      "owner": "5acbd180fad38b209c044dc4",
-      "components": [
-        {
-          "autofocus": false,
-          "input": true,
-          "tableView": true,
-          "label": "Identity Type",
-          "key": "identityType",
-          "placeholder": "-- select type --",
-          "data": {
-            "values": [
-              {
-                "value": "nin",
-                "label": "Nin"
-              },
-              {
-                "value": "iqama",
-                "label": "Iqama"
-              }
-            ],
-            "json": "",
-            "url": "",
-            "resource": "",
-            "custom": ""
-          },
-          "dataSrc": "values",
-          "valueProperty": "",
-          "defaultValue": "",
-          "refreshOn": "",
-          "filter": "",
-          "authenticate": false,
-          "template": "<span>{{ item.label }}</span>",
-          "multiple": false,
-          "protected": false,
-          "unique": false,
-          "persistent": true,
-          "hidden": false,
-          "clearOnHide": true,
-          "validate": {
-            "required": true
-          },
-          "type": "select",
-          "labelPosition": "top",
-          "tags": [],
-          "conditional": {
-            "show": "",
-            "when": null,
-            "eq": ""
-          },
-          "properties": {}
-        },
-        {
-          "autofocus": false,
-          "input": true,
-          "tableView": true,
-          "inputType": "text",
-          "inputMask": "",
-          "label": "Id Number",
-          "key": "idNumber",
-          "placeholder": "ID number",
-          "prefix": "",
-          "suffix": "",
-          "multiple": false,
-          "defaultValue": "",
-          "protected": false,
-          "unique": false,
-          "persistent": true,
-          "hidden": false,
-          "clearOnHide": true,
-          "spellcheck": true,
-          "validate": {
-            "required": true,
-            "minLength": 10,
-            "maxLength": 10,
-            "pattern": "",
-            "custom": "",
-            "customPrivate": false
-          },
-          "conditional": {
-            "show": "",
-            "when": null,
-            "eq": ""
-          },
-          "type": "textfield",
-          "labelPosition": "top",
-          "tags": [],
-          "properties": {}
-        },
-        {
-          "autofocus": false,
-          "input": true,
-          "label": "Submit",
-          "tableView": false,
-          "key": "submit",
-          "size": "md",
-          "leftIcon": "",
-          "rightIcon": "",
-          "block": false,
-          "action": "submit",
-          "disableOnInvalid": false,
-          "theme": "primary",
-          "type": "button"
-        }
-      ],
-      "revisions": "",
-      "_vid": 0,
-      "access": [
-        {
-          "roles": [
-            "5acbd1b53c2be2a2ded30239",
-            "5acbd1b53c2be2606cd3023a",
-            "5acbd1b53c2be23d22d3023b"
-          ],
-          "type": "read_all"
-        }
-      ],
-      "submissionAccess": [],
-      "created": "2018-04-13T19:31:53.228Z",
-      "_id": "5ad105a939a94bb009f3c045",
-      "title": "New form",
-      "display": "form",
-      "settings": {},
-      "name": "newForm",
-      "path": "newform",
-      "project": "5acbd1b53c2be283ced30238",
-      "modified": "2018-04-13T19:31:53.419Z",
-      "machineName": "kpeemdlniebvueo:newForm"
-    };
+
     // this.myForm = {};
     // let validateOptions : ValidateOptions = { };
     // this.myForm.title= "form title";
@@ -229,5 +79,9 @@ export class CustomControlComponent {
     // debugger;
     // this.myForm.components = [];
     // this.myForm.components.push(component);
+  }
+
+  onSubmit(requestSubmission: any): void {
+    console.log(requestSubmission);
   }
 }

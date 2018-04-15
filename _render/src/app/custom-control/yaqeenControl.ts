@@ -1,9 +1,10 @@
 import { BaseComponent, TextFieldComponent } from 'formiojs/lib/components/base/Base';
 import { Formio } from 'formiojs/full';
 import FormioUtils from 'formiojs/utils';
-import * as _ from "lodash";
+import * as _ from 'lodash';
 
 import { FormioOptions } from 'angular-formio';
+import { IdentityType } from './const';
 
 export class YaqeenControlComponent extends BaseComponent {
     [x: string]: any;
@@ -23,8 +24,8 @@ export class YaqeenControlComponent extends BaseComponent {
 
 
         // info.attr.placeholder = "cccccc";
-        //let test = info.component.validations;
-        //info.template = FormioUtils.interpolate("<h1>test</h2>")
+        // let test = info.component.validations;
+        // info.template = FormioUtils.interpolate("<h1>test</h2>")
         // read proparty from JSON
         // info.attr.spellcheck = this.component.spellcheck;
 
@@ -32,13 +33,14 @@ export class YaqeenControlComponent extends BaseComponent {
     }
 
     get idTypes() {
-        if (this._idTypes)
+        if (this._idTypes) {
             return this._idTypes;
+        }
 
         this._idTypes = [
             { value: 0, label: _.get(this.component, 'fields.idType.placeholder', '') },
-            { value: 1, label: this.t('nin') },
-            { value: 2, label: this.t('iqama') },
+            { value: IdentityType.Nin, label: this.t('nin') },
+            { value: IdentityType.Iqama, label: this.t('iqama') },
         ];
 
         return this._idTypes;
@@ -53,9 +55,10 @@ export class YaqeenControlComponent extends BaseComponent {
         const [idTypeColumn, idNumberColumn] = this.createInputs();
 
         inputGroup.appendChild(idTypeColumn);
+        inputGroup.appendChild(idNumberColumn);
 
         // const input = this.ce(this.info.type, this.info.attr);
-        //this.addInput(input, inputGroup);
+        // this.addInput(input, inputGroup);
         this.errorContainer = container;
         this.setInputStyles(inputGroup);
         container.appendChild(inputGroup);
@@ -94,11 +97,16 @@ export class YaqeenControlComponent extends BaseComponent {
 
         // Ensure the day limits match up with the months selected.
         this.monthInput.onchange = function () {
+
+            // set disbled attr. to false
+            self.setDisabled(self.dayInput, +this.value > 0 ? false : true);
+
+            console.log('id type changed --> ', this.value);
             // self.dayInput.max = new Date(self.yearInput.value, this.value, 0).getDate();
             // if (self.dayInput.value > self.dayInput.max) {
             //     self.dayInput.value = self.dayInput.max;
             // }
-            console.log("id type changed");
+
             self.updateValue();
         };
 
@@ -118,7 +126,7 @@ export class YaqeenControlComponent extends BaseComponent {
 
         const dayLabel = this.ce('label', {
             for: id,
-            class: _.get(this.component, 'fields.day.required', false) ? 'field-required' : ''
+            class: _.get(this.component, 'fields.idNumber.required', false) ? 'field-required' : ''
         });
         dayLabel.appendChild(this.text(_.get(this.component, 'fields.idNumber.label', false)));
         this.setSubinputLabelStyle(dayLabel);
@@ -133,14 +141,18 @@ export class YaqeenControlComponent extends BaseComponent {
             placeholder: _.get(this.component, 'fields.idNumber.placeholder', ''),
             id
         });
+
+        // diabel control initially
+        this.setDisabled(this.dayInput, true);
+
         this.hook('input', this.dayInput, dayInputWrapper);
         this.addEventListener(this.dayInput, 'change', () => this.updateValue());
         dayInputWrapper.appendChild(this.dayInput);
         this.setSubinputStyle(dayInputWrapper);
         dayColumn.appendChild(dayInputWrapper);
 
-        //if (subinputAtTheBottom) {
-        dayColumn.appendChild(dayLabel);
+        // if (subinputAtTheBottom) {
+        // dayColumn.appendChild(dayLabel);
         //     }
 
         return dayColumn;
@@ -154,8 +166,7 @@ export class YaqeenControlComponent extends BaseComponent {
 
             if (inputsLabelPosition === 'left') {
                 input.style.marginLeft = '33%';
-            }
-            else {
+            } else {
                 input.style.marginRight = '33%';
             }
         }
