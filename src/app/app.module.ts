@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { FormioModule } from 'angular-formio';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CustomControlComponent } from './custom-control/custom-control.component';
@@ -14,6 +13,14 @@ import { LearningResourcesComponent } from './learning-resources/learning-resour
 import { CustomControlWithTemplateComponent } from './custom-control-with-template/custom-control-with-template.component';
 import { YaqeenControlWithTemplateComponent } from './custom-control-with-template/yaqeenControlWithTemplate';
 import { FormioTeasterComponent } from './formio-teaster/formio-teaster.component';
+import { ServiceLocator } from './services/locator.service';
+import { HttpModule } from '@angular/http';
+import { HtmlLoaderService } from './services/HtmlLoader.service';
+import { FormWithResourcesComponent } from './form-with-resources/form-with-resources.component';
+import { FormioAuthService, FormioAuthConfig } from 'angular-formio/auth';
+import { AuthConfig, AppConfig } from '../form-io-app-config';
+import { FormioModule, FormioAppConfig } from 'angular-formio';
+import { FormioResourceConfig, FormioResourceService } from 'angular-formio/resource';
 
 
 const appRoutes: Routes = [
@@ -21,7 +28,8 @@ const appRoutes: Routes = [
   { path: 'customwithtemplate', component: CustomControlWithTemplateComponent },
   { path: 'custom', component: CustomControlComponent },
   { path: 'learn', component: LearningResourcesComponent },
-  { path: 'fteaster', component: FormioTeasterComponent}
+  { path: 'fteaster', component: FormioTeasterComponent },
+  { path: 'compRes', component: FormWithResourcesComponent }
   // { path: '**', component: CustomControlComponent }
 ];
 
@@ -32,23 +40,39 @@ const appRoutes: Routes = [
     CustomControlComponent,
     LearningResourcesComponent,
     CustomControlWithTemplateComponent,
-    FormioTeasterComponent
+    FormioTeasterComponent,
+    FormWithResourcesComponent
   ],
   imports: [
     BrowserModule,
     FormioModule,
+    HttpModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [
+    HtmlLoaderService,
+    FormioAuthService,
+    { provide: FormioAuthConfig, useValue: AuthConfig },
+    { provide: FormioAppConfig, useValue: AppConfig },
+    FormioResourceService,
+    {
+      provide: FormioResourceConfig,
+      useValue: {
+        name: 'makeresource',
+        form: 'makeresource'
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
+  constructor(private injector: Injector) {
+    ServiceLocator.injector = this.injector;
     Formio.registerComponent('yaqeenControl', YaqeenControlComponent);
     Formio.registerComponent('yaqeenControlWithTemplate', YaqeenControlWithTemplateComponent);
-
   }
 }

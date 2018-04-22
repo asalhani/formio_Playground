@@ -14,7 +14,6 @@ export class YaqeenObject {
 
 // Register a custom validor to use card validition from Stripe
 if (typeof Validator.validators.yaqeenValidateor === 'undefined') {
-    debugger
     Validator.validators.yaqeenValidateor = {
         key: 'validate.yaqeenValidateor',
         message(component) {
@@ -39,12 +38,9 @@ export class YaqeenControlComponent extends BaseComponent {
     [x: string]: any;
     constructor(component, options, data) {
         super(component, options, data);
-        debugger;
         this.validators.push('yaqeenValidateor');
     }
     elementInfo() {
-
-        debugger;
 
         // this.validators.push('my_validateor');
         // this.validators.push('email');

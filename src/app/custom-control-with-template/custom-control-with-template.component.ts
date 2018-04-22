@@ -16,7 +16,7 @@ export class CustomControlWithTemplateComponent implements OnInit {
           key: 'yaqeenControlWithTemplateCtr',
           type: 'yaqeenControlWithTemplate',
           autofocus: true,
-          label: 'Yaqeen Validation ',
+          label: 'custom comp. title',
           tableView: true,
           input: true,
           clearOnHide: true,

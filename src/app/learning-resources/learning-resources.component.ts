@@ -8,7 +8,9 @@ export class LearningResourcesComponent implements OnInit {
 
   constructor() { }
 
+  inputText: string;
   ngOnInit() {
+    this.inputText = 'adib value';
   }
 
 }
