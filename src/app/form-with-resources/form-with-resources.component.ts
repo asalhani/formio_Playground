@@ -16,11 +16,7 @@ export class FormWithResourcesComponent implements OnInit {
 
   formSchema = {};
 
-
   ngOnInit() {
-
-
-
     this.formSchema = {
       "type": "form",
       "components": [
