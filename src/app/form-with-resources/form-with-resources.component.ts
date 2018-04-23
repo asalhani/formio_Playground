@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EspFormioAuthService } from '../services/formioAuth.service';
+
 
 @Component({
   selector: 'app-form-with-resources',
@@ -6,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormWithResourcesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _espFormioAuthService: EspFormioAuthService,
+  ) {
+    // auth. form.io (this is required in case we have resources in the form)
+    this._espFormioAuthService.auth();
+  }
 
-  formSchema = { };
+  formSchema = {};
+
 
   ngOnInit() {
+
+
+
     this.formSchema = {
       "type": "form",
       "components": [
@@ -86,87 +96,86 @@ export class FormWithResourcesComponent implements OnInit {
           "refreshOn": "make",
           "filter": "data.makeRefrence={{data.make}}",
           "authenticate": false,
-          "template": "<span>{{ item.data.modelResource }}</span>",
-          "multiple": false,
-          "protected": false,
-          "unique": false,
-          "persistent": true,
-          "hidden": false,
-          "clearOnHide": true,
-          "validate": {
-            "required": true
+          'template': '<span>{{ item.data.modelResource }}</span>',
+          'multiple': false,
+          'protected': false,
+          'unique': false,
+          'persistent': true,
+          'hidden': false,
+          'clearOnHide': true,
+          'validate': {
+            'required': true
           },
-          "type": "select",
-          "hideLabel": false,
-          "labelPosition": "top",
-          "tags": [],
-          "conditional": {
-            "show": "",
-            "when": null,
-            "eq": ""
+          'type': 'select',
+          'hideLabel': false,
+          'labelPosition': 'top',
+          'tags': [],
+          'conditional': {
+            'show': '',
+            'when': null,
+            'eq': ''
           },
-          "properties": {},
-          "searchField": "data.modelResource__regex",
-          "lockKey": true,
-          "clearOnRefresh": true
+          'properties': {},
+          'searchField': 'data.modelResource__regex',
+          'lockKey': true,
+          'clearOnRefresh': true
         },
         {
-          "input": true,
-          "tableView": true,
-          "inputType": "text",
-          "inputMask": "",
-          "label": "Year",
-          "key": "year",
-          "placeholder": "",
-          "prefix": "",
-          "suffix": "",
-          "multiple": false,
-          "defaultValue": "",
-          "protected": false,
-          "unique": false,
-          "persistent": true,
-          "hidden": false,
-          "clearOnHide": true,
-          "validate": {
-            "required": true,
-            "minLength": "",
-            "maxLength": "",
-            "pattern": "",
-            "custom": "",
-            "customPrivate": false
+          'input': true,
+          'tableView': true,
+          'inputType': 'text',
+          'inputMask': '',
+          'label': 'Year',
+          'key': 'year',
+          'placeholder': '',
+          'prefix': '',
+          'suffix': '',
+          'multiple': false,
+          'defaultValue': '',
+          'protected': false,
+          'unique': false,
+          'persistent': true,
+          'hidden': false,
+          'clearOnHide': true,
+          'validate': {
+            'required': true,
+            'minLength': '',
+            'maxLength': '',
+            'pattern': '',
+            'custom': '',
+            'customPrivate': false
           },
-          "conditional": {
-            "show": "",
-            "when": null,
-            "eq": ""
+          'conditional': {
+            'show': '',
+            'when': null,
+            'eq': ''
           },
-          "type": "textfield",
-          "hideLabel": false,
-          "labelPosition": "top",
-          "tags": [],
-          "properties": {}
+          'type': 'textfield',
+          'hideLabel': false,
+          'labelPosition': 'top',
+          'tags': [],
+          'properties': {}
         },
         {
-          "input": true,
-          "label": "Submit",
-          "tableView": false,
-          "key": "submit",
-          "size": "md",
-          "leftIcon": "",
-          "rightIcon": "",
-          "block": false,
-          "action": "submit",
-          "disableOnInvalid": false,
-          "theme": "primary",
-          "type": "button",
-          "hideLabel": false
+          'input': true,
+          'label': 'Submit',
+          'tableView': false,
+          'key': 'submit',
+          'size': 'md',
+          'leftIcon': '',
+          'rightIcon': '',
+          'block': false,
+          'action': 'submit',
+          'disableOnInvalid': false,
+          'theme': 'primary',
+          'type': 'button',
+          'hideLabel': false
         }
       ],
-      "display": "form",
-      "title": "Vehicle Registration Form",
-      "name": "vehicleRegistrationForm",
-      "path": "vehicleregistrationform"
+      'display': 'form',
+      'title': 'Vehicle Registration Form',
+      'name': 'vehicleRegistrationForm',
+      'path': 'vehicleregistrationform'
     };
   }
-
 }

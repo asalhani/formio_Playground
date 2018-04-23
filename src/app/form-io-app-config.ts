@@ -1,4 +1,4 @@
-﻿import { FormioAppConfig } from 'angular-formio';
+import { FormioAppConfig } from 'angular-formio';
 import { FormioAuthConfig } from 'angular-formio/auth';
 
 export const AppConfig: FormioAppConfig = {
@@ -8,10 +8,10 @@ export const AppConfig: FormioAppConfig = {
 };
 
 export const AuthConfig: FormioAuthConfig = {
-  login: {
-    form: 'user/login'
-  },
-  register: {
-    form: 'user/register'
-  }
+  // login: {
+  //   form: 'user/login'
+  // },
+  // register: {
+  //   form: 'user/register'
+  // }
 };

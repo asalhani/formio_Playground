@@ -18,9 +18,11 @@ import { HttpModule } from '@angular/http';
 import { HtmlLoaderService } from './services/HtmlLoader.service';
 import { FormWithResourcesComponent } from './form-with-resources/form-with-resources.component';
 import { FormioAuthService, FormioAuthConfig } from 'angular-formio/auth';
-import { AuthConfig, AppConfig } from '../form-io-app-config';
 import { FormioModule, FormioAppConfig } from 'angular-formio';
-import { FormioResourceConfig, FormioResourceService } from 'angular-formio/resource';
+import { FormioResourceConfig } from 'angular-formio/resource';
+import { HttpClientModule } from '@angular/common/http';
+import { EspFormioAuthService } from './services/formioAuth.service';
+import { AppConfig, AuthConfig } from './form-io-app-config';
 
 
 const appRoutes: Routes = [
@@ -48,24 +50,18 @@ const appRoutes: Routes = [
     FormioModule,
     HttpModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
     )
   ],
   providers: [
+    EspFormioAuthService,
     HtmlLoaderService,
     FormioAuthService,
-    { provide: FormioAuthConfig, useValue: AuthConfig },
     { provide: FormioAppConfig, useValue: AppConfig },
-    FormioResourceService,
-    {
-      provide: FormioResourceConfig,
-      useValue: {
-        name: 'makeresource',
-        form: 'makeresource'
-      }
-    }
+    { provide: FormioAuthConfig, useValue: AuthConfig },
   ],
   bootstrap: [AppComponent]
 })
