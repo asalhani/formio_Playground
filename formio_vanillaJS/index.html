@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form.io Form Building and Rendering</title>
+
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='node_modules/formiojs/dist/formio.full.css'>
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+    <div class="page-content" ng-app="formioApp">
+        <div class="container-fluid">
+            <div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h3 class="text-center text-muted">which
+                            <a href="https://github.com/formio/ngFormio" target="_blank">Renders as a Form</a> in your Application</h3>
+                        <pre class="text-center bg-info"><h4><code>&lt;formio form="form"&gt;&lt;/formio&gt;</code></h4></pre>
+                        <div class="well">
+                            <div id='formio'></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/formiojs/dist/formio.full.js"></script>
+    
+    <script src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
