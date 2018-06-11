@@ -1,7 +1,7 @@
-import { BaseComponent, TextFieldComponent } from 'formiojs/lib/components/base/Base';
-import { Formio } from 'formiojs/full';
+import { BaseComponent, TextFieldComponent } from 'formiojs/components/base/Base';
+import { Formio } from 'formiojs/dist/formio.full';
 import FormioUtils from 'formiojs/utils';
-import { Validator } from 'formiojs/lib/components/Validator';
+import { Validator } from 'formiojs/components/Validator';
 import * as _ from 'lodash';
 
 import { FormioOptions } from 'angular-formio';

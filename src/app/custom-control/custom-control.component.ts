@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Formio } from 'formiojs/full';
+import { Formio } from 'formiojs/dist/formio.full';
 import { FormioComponent, ComponentOptions, ValidateOptions, FormioForm } from 'angular-formio';
 
 

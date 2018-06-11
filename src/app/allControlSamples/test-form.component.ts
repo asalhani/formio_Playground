@@ -8,7 +8,7 @@ import { FORM } from './form';
 })
 export class TestFormComponent {
 
-  private form: any = FORM;
+  form: any = FORM;
   private options: any = {
     hooks: {
       beforeSubmit: (submission: object, cb: any) => {
