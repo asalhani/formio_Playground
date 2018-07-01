@@ -27,17 +27,24 @@
         "../node_modules/bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.min.css",
         "../node_modules/formiojs/dist/formio.full.min.css",
         "styles.scss",
-        "../node_modules/font-awesome/scss/font-awesome.scss"
+        "../node_modules/font-awesome/scss/font-awesome.scss",
+        "./assets/kenithwook_datepicker/css/jquery.calendars.picker.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/jquery/dist/jquery.js", 
         "../node_modules/jquery-validation/dist/jquery.validate.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",
         "../node_modules/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js",
         "../node_modules/jquery-slimscroll/jquery.slimscroll.js",
         "../node_modules/jquery.uniform/dist/js/jquery.uniform.standalone.js",
         "../node_modules/jquery-form/src/jquery.form.js",
-        "../node_modules/jquery.inputmask/dist/jquery.inputmask.bundle.js"
+        "../node_modules/jquery.inputmask/dist/jquery.inputmask.bundle.js",
+        "./assets/kenithwook_datepicker/js/jquery.plugin.js",
+        "./assets/kenithwook_datepicker/js/jquery.calendars.js",
+        "./assets/kenithwook_datepicker/js/jquery.calendars.plus.js",
+        "./assets/kenithwook_datepicker/js/jquery.calendars.picker.js",
+        "./assets/kenithwook_datepicker/js/jquery.calendars-ar.js",
+        "./assets/kenithwook_datepicker/js/jquery.calendars.ummalqura.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
