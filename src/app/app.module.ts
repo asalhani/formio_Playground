@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EspFormioAuthService } from './services/formioAuth.service';
 import { AppConfig, AuthConfig } from './form-io-app-config';
 import { NewBuilderComponent } from './new-builder/new-builder.component';
+import { BasicDateCalendarComponent } from './basic-date-calendar/basic-date-calendar.component';
 
 
 const appRoutes: Routes = [
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     LearningResourcesComponent,
     FormioTeasterComponent,
     FormWithResourcesComponent,
-    NewBuilderComponent
+    NewBuilderComponent,
+    BasicDateCalendarComponent
   ],
   imports: [
     BrowserModule,
