@@ -6,9 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CustomControlComponent } from './custom-control/custom-control.component';
 import { TestFormComponent } from './allControlSamples/test-form.component';
-import { Formio } from 'formiojs/dist/formio.full';
 import { YaqeenControlComponent } from './custom-control/yaqeenControl';
-import FormioUtils from 'formiojs/utils';
 import { LearningResourcesComponent } from './learning-resources/learning-resources.component';
 import { FormioTeasterComponent } from './formio-teaster/formio-teaster.component';
 import { ServiceLocator } from './services/locator.service';
@@ -22,17 +20,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { EspFormioAuthService } from './services/formioAuth.service';
 import { AppConfig, AuthConfig } from './form-io-app-config';
 import { NewBuilderComponent } from './new-builder/new-builder.component';
-import { BasicDateCalendarComponent } from './basic-date-calendar/basic-date-calendar.component';
+import { TestDatepickerFormioCustomComponent } from './test-datepicker-formio-custom/test-datepicker-formio-custom.component';
+import { Formio } from 'formiojs';
+import { DatepickerControlComponent } from './formioCustomControls/datepicker/datepicker-control';
 
 
 const appRoutes: Routes = [
-  { path: 'form', component: TestFormComponent }, 
+  { path: 'form', component: TestFormComponent },
   // { path: 'custom', component: CustomControlComponent },
   { path: 'learn', component: LearningResourcesComponent },
   // { path: 'fteaster', component: FormioTeasterComponent },
   // { path: 'compRes', component: FormWithResourcesComponent }
-  { path: 'builder', component: NewBuilderComponent }
-  // { path: '**', component: CustomControlComponent }
+  { path: 'builder', component: NewBuilderComponent },
+  { path: 'datepicker', component: TestDatepickerFormioCustomComponent },
+  { path: '**', component: TestDatepickerFormioCustomComponent }
 ];
 
 @NgModule({
@@ -44,7 +45,7 @@ const appRoutes: Routes = [
     FormioTeasterComponent,
     FormWithResourcesComponent,
     NewBuilderComponent,
-    BasicDateCalendarComponent
+    TestDatepickerFormioCustomComponent
   ],
   imports: [
     BrowserModule,
@@ -58,17 +59,17 @@ const appRoutes: Routes = [
     )
   ],
   providers: [
-    EspFormioAuthService,
-    HtmlLoaderService,
-    FormioAuthService,
-    { provide: FormioAppConfig, useValue: AppConfig },
-    { provide: FormioAuthConfig, useValue: AuthConfig },
+    // EspFormioAuthService,
+    // HtmlLoaderService,
+    // FormioAuthService,
+    // { provide: FormioAppConfig, useValue: AppConfig },
+    // { provide: FormioAuthConfig, useValue: AuthConfig },
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private injector: Injector) {
-    ServiceLocator.injector = this.injector;
-    // Formio.registerComponent('yaqeenControl', YaqeenControlComponent);
+  constructor() {
+    //ServiceLocator.injector = this.injector;
+    Formio.registerComponent('datepickerControl', DatepickerControlComponent);
   }
 }
