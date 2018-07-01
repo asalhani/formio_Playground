@@ -28,6 +28,7 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
           "clearOnHide": true,
           "persistent": true,
           "protected": false,
+          'html': '<h1>This is a test</h1>\n',
           "fields": {
             "calendarType": {
               "label": "Calendar Type",
