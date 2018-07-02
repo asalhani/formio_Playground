@@ -20,9 +20,9 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
       "components": [
         {
           "key": "datepicker",
-          "type": "datepickerControl",
+          "type": "datepicker",
           "autofocus": true,
-          "label": "Datepicker Control",
+          "label": "xxxx",
           "tableView": false,
           "input": true,
           "clearOnHide": true,

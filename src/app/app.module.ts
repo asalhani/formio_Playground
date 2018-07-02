@@ -22,7 +22,8 @@ import { AppConfig, AuthConfig } from './form-io-app-config';
 import { NewBuilderComponent } from './new-builder/new-builder.component';
 import { TestDatepickerFormioCustomComponent } from './test-datepicker-formio-custom/test-datepicker-formio-custom.component';
 import { Formio } from 'formiojs';
-import { DatepickerControlComponent } from './formioCustomControls/datepicker/datepicker-control';
+import { Datepicker } from './formioCustomControls/datepicker/datepicker-control';
+import { CustomBuilderComponent } from './custom-builder/custom-builder.component';
 
 
 const appRoutes: Routes = [
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
   // { path: 'compRes', component: FormWithResourcesComponent }
   { path: 'builder', component: NewBuilderComponent },
   { path: 'datepicker', component: TestDatepickerFormioCustomComponent },
+  { path: 'custombuilder', component: CustomBuilderComponent },
   { path: '**', component: TestDatepickerFormioCustomComponent }
 ];
 
@@ -45,7 +47,8 @@ const appRoutes: Routes = [
     FormioTeasterComponent,
     FormWithResourcesComponent,
     NewBuilderComponent,
-    TestDatepickerFormioCustomComponent
+    TestDatepickerFormioCustomComponent,
+    CustomBuilderComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +73,6 @@ const appRoutes: Routes = [
 export class AppModule {
   constructor() {
     //ServiceLocator.injector = this.injector;
-    Formio.registerComponent('datepickerControl', DatepickerControlComponent);
+    // Formio.registerComponent('Datepicker', Datepicker);
   }
 }

@@ -3,16 +3,13 @@ import BaseComponent from 'formiojs/components/base/Base';
 import * as _ from 'lodash';
 declare var $: any;
 
-import { DatepickerConst } from './const';
-
-
-export class DatepickerControlComponent extends BaseComponent {
+export class Datepicker extends BaseComponent {
     [x: string]: any;
 
     static schema(...extend) {
         return BaseComponent.schema({
-            type: 'datepickerControl',
-            key: 'datepickerControl',
+            type: 'Datepicker',
+            key: 'Datepicker',
             input: true,
             label: 'select date',
             fields: {
@@ -32,8 +29,10 @@ export class DatepickerControlComponent extends BaseComponent {
         }, ...extend);
     }
 
-    onstructor(component, options, data) {
+    constructor(component, options, data) {
+        super(component, options, data);
         // push any validations required
+
     }
 
     static get builderInfo() {
@@ -43,7 +42,7 @@ export class DatepickerControlComponent extends BaseComponent {
             icon: 'fa fa-html5',
             documentation: '',
             weight: 100,
-            schema: DatepickerControlComponent.schema()
+            schema: Datepicker.schema()
         };
     }
 
@@ -57,7 +56,7 @@ export class DatepickerControlComponent extends BaseComponent {
     }
 
     get defaultSchema() {
-        return DatepickerControlComponent.schema();
+        return Datepicker.schema();
     }
 
     get calendarTypes() {
