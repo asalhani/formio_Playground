@@ -36,7 +36,7 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
               "placeholder": "-- select calendar Type --",
               "type": "select"
             },
-            "idNumber": {
+            "date": {
               "label": "Date",
               "required": true,
               "placeholder": "Select date",
