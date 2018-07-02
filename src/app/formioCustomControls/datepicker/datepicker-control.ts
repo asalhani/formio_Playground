@@ -66,8 +66,8 @@ export class DatepickerControlComponent extends BaseComponent {
         }
 
         this._calendarTypes = [
-            { value: 'Gregorian', label: 'Gregorian' },
-            { value: 'UmmAlqurra', label: 'UmmAlqurra' }
+            { value: 'gregorian', label: 'Gregorian' },
+            { value: 'UmmAlQura', label: 'UmmAlQura' }
         ];
         return this._calendarTypes;
     }
@@ -150,7 +150,11 @@ export class DatepickerControlComponent extends BaseComponent {
 
         // add event when selected type changed
         this.calendarTypeInput.onchange = function () {
-            console.log(self.dateInput);
+            // reset value of textbox
+            self.dateInput.value = '';
+
+            // set calendar to the selected type
+            self.createCalendar(self.getCalendarConfig(self.calendarTypeInput.value, 'en'));
         };
 
         calendarTypeInputWrapper.appendChild(this.calendarTypeInput);
@@ -198,7 +202,7 @@ export class DatepickerControlComponent extends BaseComponent {
         this.hook('input', this.dateInput, dateInputWrapper);
         this.addEventListener(this.dateInput, 'change', () => this.updateValue());
 
-        this.createCalendar(this.dateInput, this.getCalendarConfig('UmmAlQura', 'en'));
+        this.createCalendar(this.getCalendarConfig('Gregorian', 'en'));
 
         dateInputWrapper.appendChild(this.dateInput);
         this.setSubinputStyle(dateInputWrapper);
@@ -249,14 +253,14 @@ export class DatepickerControlComponent extends BaseComponent {
 
     getCalendarConfig(calendarType, lang) {
         // for complete configuarion options, visit: http://keith-wood.name/calendarsPicker.html
-        
+
         lang = 'en';
 
         return {
             calendar: $.calendars.instance(calendarType, lang),
             firstDay: 0, // 0 = sunday, 1 = monday, ....
             dateFormat: 'dd/mm/yyyy',
-            rangeSelect: true,
+            rangeSelect: false,
             monthsToShow: 1,
             onSelect: date => {
                 console.log(date);
@@ -267,11 +271,11 @@ export class DatepickerControlComponent extends BaseComponent {
         };
     }
 
-    createCalendar(input, config) {
-        $(input).calendarsPicker('destroy');
-        $(input).calendarsPicker('clear');
+    createCalendar(config) {
+        $(this.dateInput).calendarsPicker('destroy');
+        $(this.dateInput).calendarsPicker('clear');
 
-        $(input).calendarsPicker(config);
+        $(this.dateInput).calendarsPicker(config);
     }
 
     get emptyValue() {
