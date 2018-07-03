@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-test-datepicker-formio-custom',
-  templateUrl: './test-datepicker-formio-custom.component.html',
-  styleUrls: ['./test-datepicker-formio-custom.component.css']
+  templateUrl: './test-datepicker-formio-custom.component.html'
 })
 export class TestDatepickerFormioCustomComponent implements OnInit {
   ngOnInit(): void {
@@ -70,6 +69,8 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
               "required": true
             }
           },
+          "allowFeatureDate": false,
+          "numberOfMonthesToShow": 3,
           "placeholder": "",
           "prefix": "",
           "customClass": "",
@@ -105,7 +106,7 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
             "when": null,
             "eq": ""
           },
-          "id": "e8zo9f"
+          "id": "el2dc9s"
         },
         {
           "type": "button",
@@ -154,7 +155,7 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
           "rightIcon": "",
           "block": false,
           "action": "submit",
-          "id": "ergpxsd"
+          "id": "e0xjkzm"
         }
       ]
     };
