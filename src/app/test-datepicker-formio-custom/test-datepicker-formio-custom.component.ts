@@ -16,6 +16,8 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
   constructor() {
     this.data = { date: { calendarType: 'Gregorian', date: '1/1/2000' } };
 
+    // // Datepicker2
+    
     this.customCompForm = {
       "components": [
         {

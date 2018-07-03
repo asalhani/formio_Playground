@@ -31,7 +31,7 @@
         "./assets/kenithwook_datepicker/css/jquery.calendars.picker.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/formiojs/vendor/js/jquery.js",
         "../node_modules/jquery-validation/dist/jquery.validate.js",
         "../node_modules/popper.js/dist/umd/popper.js",
         "./assets/bootstrap-4.1.0-dist/js/bootstrap.js",
@@ -40,12 +40,12 @@
         "../node_modules/jquery.uniform/dist/js/jquery.uniform.standalone.js",
         "../node_modules/jquery-form/src/jquery.form.js",
         "../node_modules/jquery.inputmask/dist/jquery.inputmask.bundle.js",
-        "./assets/kenithwook_datepicker/js/jquery.plugin.js",
-        "./assets/kenithwook_datepicker/js/jquery.calendars.js",
-        "./assets/kenithwook_datepicker/js/jquery.calendars.plus.js",
-        "./assets/kenithwook_datepicker/js/jquery.calendars.picker.js",
-        "./assets/kenithwook_datepicker/js/jquery.calendars-ar.js",
-        "./assets/kenithwook_datepicker/js/jquery.calendars.ummalqura.js"
+        "../node_modules/formiojs/vendor/js/jquery.plugin.js",
+        "../node_modules/formiojs/vendor/js/jquery.calendars.js",
+        "../node_modules/formiojs/vendor/js/jquery.calendars.plus.js",
+        "../node_modules/formiojs/vendor/js/jquery.calendars.picker.js",
+        "../node_modules/formiojs/vendor/js/jquery.calendars-ar.js",
+        "../node_modules/formiojs/vendor/js/jquery.calendars.ummalqura.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
