@@ -26,10 +26,23 @@ export class CustomBuilderComponent implements OnInit {
           title: 'Elm Controls',
           weight: 10,
           components: {
+            datepicker: {
+              title: 'Datepicker',
+              key: 'datepicker',
+              icon: 'fa fa-terminal',
+              schema: {
+                type: 'datepicker',
+                label: 'Datepicker',
+                key: 'datepicker',
+              }
+            }
           }
         }
       }
+    }).then(function (builder) {
+      builder.on('saveComponent', function () {
+        console.log(builder.schema);
+      });
     });
   }
-
 }

@@ -40,12 +40,12 @@
         "../node_modules/jquery.uniform/dist/js/jquery.uniform.standalone.js",
         "../node_modules/jquery-form/src/jquery.form.js",
         "../node_modules/jquery.inputmask/dist/jquery.inputmask.bundle.js",
-        "./assets/kenithwook_datepicker/js/jquery.plugin.js",
-        "./assets/kenithwook_datepicker/js/jquery.calendars.js",
-        "./assets/kenithwook_datepicker/js/jquery.calendars.plus.js",
-        "./assets/kenithwook_datepicker/js/jquery.calendars.picker.js",
-        "./assets/kenithwook_datepicker/js/jquery.calendars-ar.js",
-        "./assets/kenithwook_datepicker/js/jquery.calendars.ummalqura.js"
+        "../node_modules/formiojs/vendor/js/jquery.plugin.js",
+        "../node_modules/formiojs/vendor/js/jquery.calendars.js",
+        "../node_modules/formiojs/vendor/js/jquery.calendars.plus.js",
+        "../node_modules/formiojs/vendor/js/jquery.calendars.picker.js",
+        "../node_modules/formiojs/vendor/js/jquery.calendars-ar.js",
+        "../node_modules/formiojs/vendor/js/jquery.calendars.ummalqura.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
