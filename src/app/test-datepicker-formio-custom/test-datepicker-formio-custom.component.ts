@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-test-datepicker-formio-custom',
-  templateUrl: './test-datepicker-formio-custom.component.html',
-  styleUrls: ['./test-datepicker-formio-custom.component.css']
+  templateUrl: './test-datepicker-formio-custom.component.html'
 })
 export class TestDatepickerFormioCustomComponent implements OnInit {
   ngOnInit(): void {
@@ -14,51 +13,153 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
   customCompForm: any;
 
   constructor() {
-    this.data = { date: { calendarType: 'Gregorian', date: '1/1/2000' } };
+    //this.data = {};
+    this.data = { "data": { "datepicker": { "calendarType": "gregorian", "date": "26/07/2018" }, "submit": true }, "state": "submitted" };
+
+    // this.customCompForm = {
+    //   "display": "form",
+    //   "components": [
+    //     {
+    //       "label": "Day",
+    //       "mask": false,
+    //       "type": "day",
+    //       "input": true,
+    //       "key": "day2",
+    //       "fields": {
+    //         "day": {
+    //           "type": "number"
+    //         },
+    //         "month": {
+    //           "type": "select"
+    //         },
+    //         "year": {
+    //           "type": "number"
+    //         }
+    //       }
+    //     }
+    //   ],
+    //   "settings": {
+    //     "pdf": {
+    //       "id": "1ec0f8ee-6685-5d98-a847-26f67b67d6f0",
+    //       "src": "https://files.form.io/pdf/5692b91fd1028f01000407e3/file/1ec0f8ee-6685-5d98-a847-26f67b67d6f0"
+    //     }
+    //   }
+    // };
 
     // // Datepicker2
     
     this.customCompForm = {
       "components": [
         {
-          "key": "datepicker",
+          "label": "Datepicker",
+          "refreshOnChange": false,
+          "mask": false,
           "type": "datepicker",
-          "autofocus": true,
-          "label": "xxxx",
-          "tableView": false,
+          "key": "datepicker",
           "input": true,
-          "clearOnHide": true,
-          "persistent": true,
-          "protected": false,
-          'html': '<h1>This is a test</h1>\n',
           "fields": {
             "calendarType": {
               "label": "Calendar Type",
-              "required": true,
-              "placeholder": "-- select calendar Type --",
-              "type": "select"
+              "type": "select",
+              "placeholder": "",
+              "required": true
             },
             "date": {
               "label": "Date",
-              "required": true,
-              "placeholder": "Select date",
-              "type": "text"
+              "type": "textfield",
+              "placeholder": "",
+              "required": true
             }
           },
+          "allowFeatureDate": false,
+          "numberOfMonthesToShow": 3,
+          "placeholder": "",
+          "prefix": "",
+          "customClass": "",
+          "suffix": "",
+          "multiple": false,
+          "defaultValue": null,
+          "protected": false,
+          "unique": false,
+          "persistent": true,
+          "hidden": false,
+          "clearOnHide": true,
+          "tableView": true,
           "labelPosition": "top",
-          "tags": [],
+          "labelWidth": 30,
+          "labelMargin": 3,
+          "description": "",
+          "errorLabel": "",
+          "tooltip": "",
+          "hideLabel": false,
+          "tabindex": "",
+          "disabled": false,
+          "autofocus": false,
+          "dbIndex": false,
+          "customDefaultValue": "",
+          "calculateValue": "",
+          "validate": {
+            "required": false,
+            "custom": "",
+            "customPrivate": false
+          },
           "conditional": {
-            "show": "",
+            "show": null,
             "when": null,
             "eq": ""
           },
-          "properties": {}
+          "id": "el2dc9s"
+        },
+        {
+          "type": "button",
+          "label": "Submit",
+          "key": "submit",
+          "disableOnInvalid": true,
+          "theme": "primary",
+          "input": true,
+          "placeholder": "",
+          "prefix": "",
+          "customClass": "",
+          "suffix": "",
+          "multiple": false,
+          "defaultValue": null,
+          "protected": false,
+          "unique": false,
+          "persistent": false,
+          "hidden": false,
+          "clearOnHide": true,
+          "tableView": true,
+          "labelPosition": "top",
+          "labelWidth": 30,
+          "labelMargin": 3,
+          "description": "",
+          "errorLabel": "",
+          "tooltip": "",
+          "hideLabel": false,
+          "tabindex": "",
+          "disabled": false,
+          "autofocus": false,
+          "dbIndex": false,
+          "customDefaultValue": "",
+          "calculateValue": "",
+          "validate": {
+            "required": false,
+            "custom": "",
+            "customPrivate": false
+          },
+          "conditional": {
+            "show": null,
+            "when": null,
+            "eq": ""
+          },
+          "size": "md",
+          "leftIcon": "",
+          "rightIcon": "",
+          "block": false,
+          "action": "submit",
+          "id": "e0xjkzm"
         }
-      ],
-      title: 'New form',
-      display: 'form',
-      name: 'newForm',
-      path: 'newform'
+      ]
     };
   }
 
