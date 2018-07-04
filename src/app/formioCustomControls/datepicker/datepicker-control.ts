@@ -3,13 +3,13 @@ import BaseComponent from 'formiojs/components/base/Base';
 import * as _ from 'lodash';
 declare var $: any;
 
-export class Datepicker extends BaseComponent {
+export class Datepicker2 extends BaseComponent {
     [x: string]: any;
 
     static schema(...extend) {
         return BaseComponent.schema({
-            type: 'Datepicker',
-            key: 'Datepicker',
+            type: 'Datepicker2',
+            key: 'Datepicker2',
             input: true,
             label: 'select date',
             fields: {
@@ -42,7 +42,7 @@ export class Datepicker extends BaseComponent {
             icon: 'fa fa-html5',
             documentation: '',
             weight: 100,
-            schema: Datepicker.schema()
+            schema: Datepicker2.schema()
         };
     }
 
@@ -56,7 +56,7 @@ export class Datepicker extends BaseComponent {
     }
 
     get defaultSchema() {
-        return Datepicker.schema();
+        return Datepicker2.schema();
     }
 
     get calendarTypes() {
@@ -254,6 +254,7 @@ export class Datepicker extends BaseComponent {
         // for complete configuarion options, visit: http://keith-wood.name/calendarsPicker.html
 
         lang = 'en';
+        console.log($(this.dateInput));
 
         return {
             calendar: $.calendars.instance(calendarType, lang),
@@ -265,7 +266,7 @@ export class Datepicker extends BaseComponent {
                 console.log(date);
             },
             onClose: () => {
-                console.log("closed");
+                console.log('closed');
             }
         };
     }

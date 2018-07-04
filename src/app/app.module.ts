@@ -22,7 +22,7 @@ import { AppConfig, AuthConfig } from './form-io-app-config';
 import { NewBuilderComponent } from './new-builder/new-builder.component';
 import { TestDatepickerFormioCustomComponent } from './test-datepicker-formio-custom/test-datepicker-formio-custom.component';
 import { Formio } from 'formiojs';
-import { Datepicker } from './formioCustomControls/datepicker/datepicker-control';
+import { Datepicker2 } from './formioCustomControls/datepicker/datepicker-control';
 import { CustomBuilderComponent } from './custom-builder/custom-builder.component';
 
 
@@ -73,6 +73,6 @@ const appRoutes: Routes = [
 export class AppModule {
   constructor() {
     //ServiceLocator.injector = this.injector;
-    // Formio.registerComponent('Datepicker', Datepicker);
+     Formio.registerComponent('Datepicker2', Datepicker2);
   }
 }

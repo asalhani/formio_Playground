@@ -46,6 +46,8 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
     //   }
     // };
 
+    // // Datepicker2
+    
     this.customCompForm = {
       "components": [
         {

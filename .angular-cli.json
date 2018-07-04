@@ -31,7 +31,7 @@
         "./assets/kenithwook_datepicker/css/jquery.calendars.picker.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/formiojs/vendor/js/jquery.js",
         "../node_modules/jquery-validation/dist/jquery.validate.js",
         "../node_modules/popper.js/dist/umd/popper.js",
         "./assets/bootstrap-4.1.0-dist/js/bootstrap.js",
