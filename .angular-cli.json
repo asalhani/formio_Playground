@@ -45,7 +45,8 @@
         "../node_modules/formiojs/vendor/js/jquery.calendars.plus.js",
         "../node_modules/formiojs/vendor/js/jquery.calendars.picker.js",
         "../node_modules/formiojs/vendor/js/jquery.calendars-ar.js",
-        "../node_modules/formiojs/vendor/js/jquery.calendars.ummalqura.js"
+        "../node_modules/formiojs/vendor/js/jquery.calendars.ummalqura.js",
+        "../node_modules/formiojs/vendor/js/jquery.calendars.validation.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

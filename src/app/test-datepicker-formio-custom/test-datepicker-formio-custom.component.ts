@@ -14,7 +14,7 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
 
   constructor() {
     //this.data = {};
-    this.data = { "data": { "datepicker": { "calendarType": "gregorian", "date": "26/07/2018" }, "submit": true }, "state": "submitted" };
+    this.data = {"data":{"datepicker":{"calendarType":"UmmAlQura","date":"07/10/1439"},"submit":true},"state":"submitted"};
 
     // this.customCompForm = {
     //   "display": "form",
@@ -70,7 +70,7 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
             }
           },
           "allowFeatureDate": false,
-          "numberOfMonthesToShow": 3,
+          "numberOfMonthesToShow": 1,
           "placeholder": "",
           "prefix": "",
           "customClass": "",
@@ -87,7 +87,7 @@ export class TestDatepickerFormioCustomComponent implements OnInit {
           "labelWidth": 30,
           "labelMargin": 3,
           "description": "",
-          "errorLabel": "",
+          "errorLabel": "fdsfdsf",
           "tooltip": "",
           "hideLabel": false,
           "tabindex": "",
